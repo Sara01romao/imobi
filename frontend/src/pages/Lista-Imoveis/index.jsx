@@ -51,7 +51,7 @@ export function ListaImoveis() {
                     <td>{item.preco}</td>
                     <td>{item.data}</td>
                     <td className="optionsBtns">
-                    <Link to="/">Editar</Link>
+                    <Link to={`/editar-imovel/${item.id}`}>Editar</Link>
                     <Link to="/">Excluir</Link>
                     </td>
                 </tr>
