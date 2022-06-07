@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+:root {
+  --color1: #3ba3f3;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -11,6 +14,23 @@ body {
 
 h1 {
   text-align: center;
+  color: var(--color1);
+}
+
+button {
+  height: 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--color1);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+button:hover {
+  background-color: #1f8ee2;
 }
 
 .headerLista {
@@ -21,6 +41,34 @@ h1 {
   margin: 50px auto 10px;
 }
 
+.headerLista button {
+  width: 100px;
+}
+
+.headerLista a {
+  border: 1px solid #1f8ee2;
+  padding: 4px 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #1f8ee2;
+  display: flex;
+  align-items: center;
+}
+
+.headerLista a:hover {
+  border: 1px solid #0276ce;
+  color: #0276ce;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 767px) {
+  .headerLista {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 .table-Container {
   max-width: 1000px;
   margin: 0 auto;
@@ -28,15 +76,11 @@ h1 {
   overflow: auto;
 }
 
-
 table {
   width: 100%;
   min-width: 600px;
-  margin: 0 auto;
-  border: 1px solid red;
+  margin: 20px auto 0px;
 }
-
-
 
 td,
 th {
@@ -45,9 +89,9 @@ th {
   padding: 8px;
   border: none;
 }
-th{
-  text-align: center;
-  border-bottom: 1px solid black;
+th {
+  border-bottom: 1px solid rgb(204, 204, 204);
+  color: #3f3f3f;
 }
 
 tr:nth-child(even) {
@@ -61,13 +105,12 @@ tr:nth-child(even) {
 }
 form {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 50px auto 0px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.divInput{
+.divInput {
   display: flex;
   flex-direction: column;
-  
 }

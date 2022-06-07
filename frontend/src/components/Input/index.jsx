@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import "./styles.css";
 
-export function Input({type, id, value, setChange}) {
+export function Input({ type, id, value, setChange }) {
   return (
-    
-    
-      <input type={type} id={id} value={value} onChange={e => setChange(e.target.value)} />
-    
-    
-  )
+    <input
+      type={type}
+      id={id}
+      value={value}
+      onChange={(e) => setChange(e.target.value)}
+    />
+  );
 }

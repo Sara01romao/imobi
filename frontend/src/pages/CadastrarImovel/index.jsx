@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
+import './styles.css'
 
 export function CadastrarImovel() {
   const [imovel, setImovel] = useState({});
@@ -43,11 +44,12 @@ export function CadastrarImovel() {
     }
   }
   return (
-    <div>
-      hklkh
+    <div className="cadastroImovelDiv">
+      <h1>Cadastrar Imóvel</h1>
+
       <form action="" onSubmit={enviar}>
         <div className="divInput">
-          <label htmlFor="titulo">Título Imovel</label>
+          <label htmlFor="titulo">Título Imóvel</label>
           <Input type="text" id="titulo" value={titulo} setChange={setTitulo} />
         </div>
 

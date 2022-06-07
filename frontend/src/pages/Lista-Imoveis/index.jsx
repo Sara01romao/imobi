@@ -23,7 +23,7 @@ export function ListaImoveis() {
       <div className="headerLista">
         <div>
           <input type="search" placeholder="Buscar..." />
-          <button>buscar</button>
+          <button>Buscar</button>
         </div>
         <Link to="/cadastrarImovel"> + Cadastrar</Link>
       </div>
