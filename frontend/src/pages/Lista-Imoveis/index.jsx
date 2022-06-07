@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import EditIcon from '../../assets/edit-icon.svg';
+import TrashIcon from '../../assets/trash-icon.svg'
 import { Link } from "react-router-dom";
 import "./styles.css";
 
@@ -51,8 +53,8 @@ export function ListaImoveis() {
                     <td>{item.preco}</td>
                     <td>{item.data}</td>
                     <td className="optionsBtns">
-                    <Link to={`/editar-imovel/${item.id}`}>Editar</Link>
-                    <Link to="/">Excluir</Link>
+                    <Link to={`/editar-imovel/${item.id}`}><img src={EditIcon} alt="Editar icon" /></Link>
+                    <Link to="/"><img src={TrashIcon} alt="Excluir icon" /></Link>
                     </td>
                 </tr>
               ): 
