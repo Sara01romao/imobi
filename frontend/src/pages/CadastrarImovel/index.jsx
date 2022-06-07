@@ -69,10 +69,9 @@ export function CadastrarImovel() {
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
             cols="30"
-            rows="10"
+            rows="5"
              style={{resize: "none"}}
           ></textarea>
-          {descricao}
         </div>
 
         <button> Enviar</button>
