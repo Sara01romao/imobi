@@ -25,7 +25,7 @@ export function ListaImoveis() {
           <input type="search" placeholder="Buscar..." />
           <button>buscar</button>
         </div>
-        <Link to="/"> + Cadastrar</Link>
+        <Link to="/cadastrarImovel"> + Cadastrar</Link>
       </div>
 
       <div className="table-Container">
@@ -44,7 +44,7 @@ export function ListaImoveis() {
           <tbody>
 
               {imoveis? imoveis.map((item)=>
-                <tr>
+                <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.titulo}</td>
                     <td>{item.descricao}</td>
