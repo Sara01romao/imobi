@@ -11,7 +11,6 @@ const Routas=()=>{
        <Header/>
         <Routes>
            <Route path="/" element={<ListaImoveis/>}/>
-           <Route path="/lista-imoveis" element={<ListaImoveis/>}/>
            <Route path="/cadastrarImovel" element={<CadastrarImovel/>}/>
            <Route path="/editar-imovel/:id" element={<EditarImovel/>}/>
         </Routes>

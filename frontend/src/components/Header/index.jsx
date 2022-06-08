@@ -9,10 +9,10 @@ export function Header() {
         <Link to="/" className="logo">Imobi</Link>
         <ul>
           <li>
-            <Link to="/">Arquivos</Link>
+            <Link to="">Arquivos</Link>
           </li>
           <li>
-             <Link to="/lista-imoveis">Imovéis</Link>
+             <Link to="/">Imovéis</Link>
           </li>
         </ul>
         

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import Arrow from "../../assets/arrow.svg"
 import { Input } from "../../components/Input";
 
 export default function EditarImovel() {
@@ -56,7 +57,7 @@ export default function EditarImovel() {
       const dataRes = await response.json();
       console.log(dataRes)
       if (dataRes) {
-        navigate("/lista-imoveis");
+        navigate("/");
       }
       
     }
@@ -69,7 +70,8 @@ export default function EditarImovel() {
   }
 
   return (
-    <div>
+    <div className="container">
+      <Link  className="voltar" to="/"><img src={Arrow} alt="voltar icon"/></Link>
       <h1>Editar Imóvel</h1>
       <form action="" onSubmit={editar}>
         <div className="divInput">
@@ -103,7 +105,7 @@ export default function EditarImovel() {
           
         </div>
 
-        <button> Enviar</button>
+        <button> Editar</button>
       </form>
     </div>
   );

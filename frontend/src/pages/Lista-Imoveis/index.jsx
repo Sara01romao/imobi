@@ -65,15 +65,8 @@ export function ListaImoveis() {
                 </tr>
               ): 
             <tr>
-              <td>1</td>
-              <td>Casa</td>
-              <td>casa Lorem ipsum dolor sit amet.</td>
-              <td>250</td>
-              <td>01/03/2022</td>
-              <td className="optionsBtns">
-                  <Link to="/">Editar</Link>
-                  <Link to="/">Excluir</Link>
-              </td>
+              
+             
             </tr>
            }
           </tbody>

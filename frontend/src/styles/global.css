@@ -17,6 +17,12 @@ h1 {
   color: var(--color1);
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+
 button {
   height: 35px;
   font-size: 1rem;
@@ -120,7 +126,6 @@ tr:nth-child(even) {
   font-size: 16px;
   color: #3f3f3f;
   padding: 0px 10px;
- 
 }
 
 .optionsBtns button {
@@ -134,7 +139,8 @@ tr:nth-child(even) {
   padding: 0px 10px;
 }
 
-.optionsBtns a:hover, .optionsBtns button:hover {
+.optionsBtns a:hover,
+.optionsBtns button:hover {
   background-color: #f0f0f0;
 }
 
@@ -164,4 +170,9 @@ form {
 textarea {
   padding: 10px;
   font-size: 1rem;
+}
+
+.voltar {
+  text-decoration: none;
+  color: #0276ce;
 }

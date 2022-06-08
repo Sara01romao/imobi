@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
-import './styles.css'
+import Arrow from "../../assets/arrow.svg";
+import './styles.css';
 
 export function CadastrarImovel() {
   const [imovel, setImovel] = useState({});
@@ -29,9 +30,9 @@ export function CadastrarImovel() {
       );
 
       const data = await response.json();
-      console.log(data, imovel)
-      if (data) {
-        /* navigate("/lista-imoveis"); */
+     
+      if (!data.erro) {
+        navigate("/");
       }
     }
 
@@ -42,6 +43,7 @@ export function CadastrarImovel() {
   }
   return (
     <div className="cadastroImovelDiv">
+      <Link  className="voltar" to="/"><img src={Arrow} alt="voltar icon"/></Link>
       <h1>Cadastrar Imóvel</h1>
 
       <form action="" onSubmit={enviar}>
@@ -72,7 +74,9 @@ export function CadastrarImovel() {
         </div>
 
         <button> Enviar</button>
+        
       </form>
+      
     </div>
   );
 }
