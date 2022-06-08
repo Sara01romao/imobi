@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Input } from "../../components/Input";
 
 export default function EditarImovel() {
@@ -10,14 +10,63 @@ export default function EditarImovel() {
   const [descricao, setDescricao] = useState("");
   const [preco, setPreco] = useState("");
   const [data, setData] = useState("");
+  let navigate = useNavigate();
 
   function editar(){
 
   }
 
   useEffect(() => {
+    async function getItem() {
+      const res = await fetch(
+        "http://localhost/imobi/backend/buscarItem.php?id="+ id
+      );
+      const data = await res.json();
+       if(data){
+        setTitulo(data[0].titulo)
+        setPreco(data[0].preco)
+        setData(data[0].data)
+        setDescricao(data[0].descricao)
+      } 
 
-  }, []);
+    }
+    getItem();
+  }, [id]);
+
+
+  function editar(e) {
+    e.preventDefault();
+
+    setImovel({ id, titulo, descricao, preco, data });
+
+    
+
+    async function editeApi() {
+      const response = await fetch(
+        "http://localhost/imobi/backend/editarImovel.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({id, titulo, descricao, preco, data}),
+        }
+      );
+
+      const dataRes = await response.json();
+      console.log(dataRes)
+      if (dataRes) {
+        navigate("/lista-imoveis");
+      }
+      
+    }
+
+    if(imovel){
+      editeApi();
+    }
+    
+     
+  }
 
   return (
     <div>
