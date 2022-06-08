@@ -1,5 +1,5 @@
 
-<img aling="center" max-width="auto" height="auto"  src="https://user-images.githubusercontent.com/46323667/172527091-5edf1da9-3d6e-4fb5-b588-25891b52cc60.png">
+<img aling="center" max-width="auto" height="auto"  src="https://user-images.githubusercontent.com/46323667/172530575-1667c53a-0467-4c81-a031-3c611f8e640a.png">
 
 # :hourglass_flowing_sand: Funcionalidades e Requisitos do projeto
 
