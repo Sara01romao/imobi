@@ -29,18 +29,15 @@ export function CadastrarImovel() {
       );
 
       const data = await response.json();
+      console.log(data, imovel)
       if (data) {
-        navigate("/lista-imoveis");
+        /* navigate("/lista-imoveis"); */
       }
     }
 
     if (imovel) {
       postApi();
-      setImovel(null);
-      setTitulo("");
-      setDescricao("");
-      setPreco("");
-      setData("");
+     
     }
   }
   return (

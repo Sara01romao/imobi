@@ -110,6 +110,7 @@ tr:nth-child(even) {
 }
 
 .optionsBtns a {
+  background-color: #f7f8ff;
   width: 100%;
   height: 40px;
   text-decoration: none;
@@ -122,7 +123,18 @@ tr:nth-child(even) {
  
 }
 
-.optionsBtns a:hover{
+.optionsBtns button {
+  background-color: #f7f8ff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: initial;
+  padding: 0px 10px;
+}
+
+.optionsBtns a:hover, .optionsBtns button:hover {
   background-color: #f0f0f0;
 }
 

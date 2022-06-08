@@ -3,9 +3,11 @@ import EditIcon from '../../assets/edit-icon.svg';
 import TrashIcon from '../../assets/trash-icon.svg'
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { ModalDeletar } from "../../components/ModalDeletar";
 
 export function ListaImoveis() {
   const [imoveis, setImoveis] = useState(null);
+  const [modalDelete, setModalDelete] = useState(null);
 
   useEffect(() => {
     async function getApi() {
@@ -16,7 +18,11 @@ export function ListaImoveis() {
       setImoveis(data);
     }
     getApi();
-  }, []);
+  }, [modalDelete]);
+
+  function handleRemove(id){
+    setModalDelete(id)
+   }
 
   return (
     <main className="listaImove-container">
@@ -51,10 +57,10 @@ export function ListaImoveis() {
                     <td>{item.titulo}</td>
                     <td>{item.descricao}</td>
                     <td>{item.preco}</td>
-                    <td>{item.data}</td>
+                    <td>{item.data.split('-').reverse().join('/')}</td>
                     <td className="optionsBtns">
                     <Link to={`/editar-imovel/${item.id}`}><img src={EditIcon} alt="Editar icon" /></Link>
-                    <Link to="/"><img src={TrashIcon} alt="Excluir icon" /></Link>
+                    <button onClick={()=>handleRemove(item.id)}><img src={TrashIcon} alt="Excluir icon"/></button>
                     </td>
                 </tr>
               ): 
@@ -73,6 +79,8 @@ export function ListaImoveis() {
           </tbody>
         </table>
       </div>
+      {modalDelete &&  <ModalDeletar item={modalDelete} setValue={setModalDelete}/> }
+     
     </main>
   );
 }
