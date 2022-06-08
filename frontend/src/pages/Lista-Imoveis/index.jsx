@@ -56,7 +56,7 @@ export function ListaImoveis() {
                     <td>{item.id}</td>
                     <td>{item.titulo}</td>
                     <td>{item.descricao}</td>
-                    <td>{item.preco}</td>
+                    <td>R$ {item.preco}</td>
                     <td>{item.data.split('-').reverse().join('/')}</td>
                     <td className="optionsBtns">
                     <Link to={`/editar-imovel/${item.id}`}><img src={EditIcon} alt="Editar icon" /></Link>
